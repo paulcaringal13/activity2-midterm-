@@ -11,6 +11,7 @@
       :minusQty="minusQty"
     />
     <p>Total: ₱{{ total }}</p>
+       <p>git</p>
 
   </div>
 </template>
