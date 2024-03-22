@@ -1,18 +1,20 @@
 <template>
-  <div class="product-container">
-    List of Products
-    <ul>
+  <div>
+    <h1 className="font-extrabold text-xl">List of Products</h1>
+    <h2 className="text-red-500 font-bold text-md ">{{ errorMsg }}</h2>
+    <ul className="grid grid-cols-4 space-x-5 m-4">
       <li
         v-for="(product, index) in productArray"
         :key="index"
-        class="product-list"
+        className="col-span-1 bg-white border-2 border-black flex flex-col space-y-2 text-center p-4 rounded-lg"
       >
-        <p>₱{{ product.productPrice }} {{ product.productName }}</p>
+        <h3 className="text-2xl font-extrabold">{{ product.productName }}</h3>
+        <h4 className="text-lg font-bold">₱{{ product.productPrice }}</h4>
         <button
-          class="add-to-cart-button"
+          className="bg-secondary p-2 rounded-lg hover:bg-secondary/95"
           @click="addToCart({ ...product, qty: 1 })"
         >
-          Add to Cart
+          <p className="text-xs font-bold text-white">Add to Cart</p>
         </button>
       </li>
     </ul>
@@ -21,48 +23,11 @@
 
 <script>
 export default {
-  name: "CounterButton",
+  name: "ProductList",
   props: {
     productArray: Array,
     addToCart: Function,
+    errorMsg: String,
   },
 };
 </script>
-
-<style>
-p {
-  font-size: 0.75rem;
-  line-height: 1rem;
-  margin: 0;
-}
-
-.product-container {
-  width: 100vw;
-  height: fit-content;
-}
-
-.product-list {
-  display: flex;
-  flex-direction: row;
-  height: fit-content;
-  column-gap: 0.75rem;
-  margin-top: 0.24rem;
-  /* background-color: #ef4444; */
-}
-
-.add-to-cart-button {
-  height: fit-content;
-  border-radius: 0.375rem;
-  padding: 0.25rem;
-  font-size: 10px;
-  line-height: 10px;
-  cursor: pointer;
-}
-
-.add-product-button {
-  background-color: transparent;
-  cursor: pointer;
-  border: none;
-  margin-top: 20px;
-}
-</style>
