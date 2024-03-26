@@ -7,13 +7,9 @@
     >
       <h1 className="text-2xl font-extrabold my-2">Add Task</h1>
       <label for="title" className="text-sm font-bold">Title:</label>
-      <input
-        v-model="newTask.title"
-        placeholder="Enter Title"
-        name="title"
-        required
-        className="h-10 p-4 text-sm font-bold border-[1px] border-slate-900 rounded"
-      />
+      <input v-model="newTask.title" placeholder="Enter Title" name="title
+      required className="h-10 p-4 text-sm font-bold border-[1px]
+      border-slate-900 rounded" />
       <label for="description" className="text-sm font-bold"
         >Description:</label
       >
