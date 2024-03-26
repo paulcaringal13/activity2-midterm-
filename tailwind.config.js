@@ -6,7 +6,7 @@ module.exports = {
       colors: {
         primary: "#41B883",
         secondary: "#34495E",
-        accent: "#f4f4f5",
+        accent: "#edf2f4",
       },
     },
   },
@@ -14,4 +14,8 @@ module.exports = {
     extend: {},
   },
   plugins: [],
+  corePlugins: {
+    // Enable the components feature
+    components: true,
+  },
 };
