@@ -30,7 +30,7 @@
           type="text"
           v-model="username"
           placeholder="Username"
-          className="py-2 px-4 rounded-full border-2 border-gray-400 focus:border-primary outline-none text-description text-sm shadow-lg "
+          className="py-2 px-4 rounded-full border-2 border-gray-400 focus:border-primary outline-none text-description text-sm shadow-lg text-slate-800"
         />
         <label for="password" className="text-description text-sm"
           >Password</label
@@ -39,7 +39,7 @@
           type="password"
           v-model="password"
           placeholder="Password"
-          className="py-2 px-4 rounded-full border-2 border-gray-400 focus:border-primary outline-none text-description text-sm shadow-lg "
+          className="py-2 px-4 rounded-full border-2 border-gray-400 focus:border-primary outline-none text-description text-sm shadow-lg text-slate-800"
         />
         <button
           @click="$store.dispatch('signUpUser', { username, password })"
