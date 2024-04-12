@@ -73,9 +73,11 @@ export default {
       },
     },
   },
-  // Reset the error message
+  // Reset the text fields
   mounted() {
     this.$store.commit("setErrorMsg", "");
+    this.$store.commit("setUsername", "");
+    this.$store.commit("setPassword", "");
   },
 };
 </script>
