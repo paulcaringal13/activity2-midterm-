@@ -21,30 +21,31 @@
       >
         <h2 className="mx-auto text-white font-bold text-xl">C2D Bookstore</h2>
         <h4 className="mx-auto text-sm text-description mb-4">
-          Sign in your account!
+          Sign up and create your account!
         </h4>
-        <label for="" className="text-description text-sm">Username</label>
+        <label for="username" className="text-description text-sm"
+          >Username</label
+        >
         <input
           type="text"
           v-model="username"
           placeholder="Username"
-          className="py-2 px-4 rounded-full border-2 border-gray-400 focus:border-primary outline-none text-description text-sm shadow-lg text-slate-800"
+          className="py-2 px-4 rounded-full border-2 border-gray-400 focus:border-primary outline-none text-description text-sm shadow-lg "
         />
-        <label for="" className="text-description text-sm">Password</label>
+        <label for="password" className="text-description text-sm"
+          >Password</label
+        >
         <input
           type="password"
           v-model="password"
           placeholder="Password"
-          className="py-2 px-4 rounded-full border-2 border-gray-400 focus:border-primary outline-none text-description text-sm shadow-lg text-slate-800"
+          className="py-2 px-4 rounded-full border-2 border-gray-400 focus:border-primary outline-none text-description text-sm shadow-lg "
         />
-        <p className="text-red-500 font-semibold text-sm">
-          {{ $store.state.errorMsg }}
-        </p>
         <button
-          @click="$store.dispatch('authenticate', { username, password })"
+          @click="$store.dispatch('signUpUser', { username, password })"
           className="bg-primary hover:bg-primary/50 mt-4 py-2 rounded-full text-sm font-bold shadow-lg"
         >
-          Login
+          Sign Up
         </button>
       </div>
     </div>

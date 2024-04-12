@@ -3,9 +3,14 @@ module.exports = {
   content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      fontFamily: {
+        barlow: ['"Barlow"', "sans-serif"],
+      },
       colors: {
         primary: "#41B883",
-        secondary: "#34495E",
+        secondary: "#2b3c4e",
+        foreground: "#394f67",
+        description: "#ffffffb3",
         accent: "#edf2f4",
       },
     },
