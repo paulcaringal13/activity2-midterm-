@@ -1,3 +1,11 @@
 <template>
-  <div className="font-barlow text-slate-800"><router-view /></div>
+  <div id="app">
+    <router-view />
+  </div>
 </template>
+
+<script>
+export default {
+  name: "App",
+};
+</script>
