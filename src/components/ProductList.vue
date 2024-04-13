@@ -4,6 +4,7 @@
     <div v-for="product in products" :key="product.id">
       <ProductItem :product="product" />
     </div>
+    <router-link :to="{ name: 'AddProduct' }">Add Product</router-link>
   </div>
 </template>
 

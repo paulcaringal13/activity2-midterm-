@@ -17,5 +17,7 @@ export default createStore({
       },
     ],
   },
-  mutations: {},
+  mutations: {addProduct(state, product) {
+    state.products.push(product);
+  },},
 });
