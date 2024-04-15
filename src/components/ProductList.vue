@@ -4,20 +4,24 @@
     <div v-for="product in products" :key="product.id">
       <ProductItem :product="product" />
     </div>
+    <router-link :to="{ name: 'AddProduct' }">Add Product</router-link>
   </div>
 </template>
 
 <script>
-import ProductItem from "./ProductItem.vue"; // Adjust the path if needed
+import { mapState } from 'vuex';
+import ProductItem from "./ProductItem.vue";
 
 export default {
   components: {
     ProductItem,
   },
   computed: {
-    products() {
-      return this.$store.state.products;
-    },
+    ...mapState(['products']),
   },
 };
 </script>
+
+<style>
+/* Add any component-specific styles here */
+</style>
