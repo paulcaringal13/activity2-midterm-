@@ -7,12 +7,6 @@ const routes = [
     name: "ProductList",
     component: ProductList,
   },
-  {
-    path: "/add",
-    name: "AddProduct",
-    component: AddProduct,
-  },
-  
 ];
 
 const router = createRouter({
