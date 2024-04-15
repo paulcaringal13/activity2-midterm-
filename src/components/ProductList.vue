@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2>Product List</h2>
-    <div v-for="product in products" :key="product.id">
+    <div v-for="(product, index) in $store.state.products" :key="index">
       <ProductItem :product="product" />
     </div>
     <router-link :to="{ name: 'AddProduct' }">Add Product</router-link>
@@ -9,16 +9,15 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
 import ProductItem from "./ProductItem.vue";
 
 export default {
   components: {
     ProductItem,
   },
-  computed: {
-    ...mapState(['products']),
-  },
+  // computed: {
+  //   ...mapState(["products"]),
+  // },
 };
 </script>
 

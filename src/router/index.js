@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import ProductList from "../components/ProductList.vue";
 import AddProduct from "../components/AddProduct.vue";
+import EditProduct from "../components/EditProduct.vue";
 
 const routes = [
   {
@@ -13,6 +14,11 @@ const routes = [
     name: "AddProduct",
     component: AddProduct,
   },
+  {
+    path: "/edit/:id",
+    name: "EditProduct",
+    component: EditProduct,
+  },
 ];
 
 const router = createRouter({
@@ -21,4 +27,3 @@ const router = createRouter({
 });
 
 export default router;
-

@@ -3,6 +3,9 @@
     <h3>{{ product.name }}</h3>
     <p>{{ product.description }}</p>
     <p>{{ product.price }}</p>
+    <router-link :to="{ name: 'EditProduct', params: { id: product.id } }"
+      >Edit</router-link
+    >
   </div>
 </template>
 
@@ -13,7 +16,3 @@ export default {
   },
 };
 </script>
-
-<style>
-/* Add any component-specific styles here */
-</style>
