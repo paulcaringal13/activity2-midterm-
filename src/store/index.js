@@ -38,5 +38,8 @@ export default createStore({
         state.products.splice(index, 1, editedProduct);
       }
     },
+    deleteProduct(state, index) {
+      state.products.splice(index, 1);
+    },
   },
 });
