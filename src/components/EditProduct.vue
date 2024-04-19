@@ -1,3 +1,4 @@
+// Edit Page
 <template>
   <div className="h-auto">
     <h2 className="text-5xl font-extrabold m-6">Edit Product</h2>
