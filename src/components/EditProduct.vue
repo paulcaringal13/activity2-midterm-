@@ -1,14 +1,14 @@
 <template>
   <div className="h-auto">
-    <h2 className="text-5xl font-extrabold m-6">Add Product</h2>
+    <h2 className="text-5xl font-extrabold m-6">Edit Product</h2>
     <form
-      @submit.prevent="addProduct"
+      @submit.prevent="editProduct"
       className="grow flex flex-col gap-4 mx-6"
     >
       <label for="name" className="text-lg font-semibold">Name</label>
       <input
         type="text"
-        v-model="name"
+        v-model="editedProduct.name"
         placeholder="Name"
         className="mx-4 border-[1px] border-zinc-200 p-3 rounded-md shadow-md"
         required
@@ -18,15 +18,16 @@
       >
       <textarea
         type="text"
-        v-model="description"
+        v-model="editedProduct.description"
         placeholder="Description"
-        className="mx-4 border-[1px] h-48 border-zinc-200 p-3 rounded-md shadow-md"
+        className="mx-4 h-48 border-[1px] border-zinc-200 p-3 rounded-md shadow-md"
         required
       />
       <label for="price" className="text-lg font-semibold">Price</label>
+
       <input
         type="number"
-        v-model="price"
+        v-model="editedProduct.price"
         placeholder="Price"
         className="mx-4 border-[1px] border-zinc-200 p-3 rounded-md shadow-md"
         required
@@ -35,7 +36,7 @@
         type="submit"
         className="p-4 border-[1px] border-zinc-200 w-fit ml-auto rounded-md mx-6 mb-6 shadow-md hover:bg-secondary hover:text-white"
       >
-        Add Product
+        Save Changes
       </button>
     </form>
   </div>
@@ -45,27 +46,16 @@
 export default {
   data() {
     return {
-      id: Math.floor(Math.random() * 1000000) + 1,
-      name: "",
-      description: "",
-      price: "",
+      editedProduct: this.$store.state.products.find(
+        (product) => product.id === parseInt(this.$route.params.id)
+      ),
     };
   },
   methods: {
-    addProduct() {
-      const product = {
-        id: this.id,
-        name: this.name,
-        description: this.description,
-        price: this.price,
-      };
-      this.$store.commit("addProduct", product);
+    editProduct() {
+      this.$store.commit("editProduct", this.editedProduct);
       this.$router.push("/");
     },
   },
 };
 </script>
-
-<style>
-/* Add any component-specific styles here */
-</style>
